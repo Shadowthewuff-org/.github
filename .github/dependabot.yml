@@ -1,0 +1,21 @@
+# Set update schedule for GitHub Actions
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    # Check the actions  registry for updates every week (weekdays)
+    schedule:
+      interval: "weekly"
+      timezone: "America/Chicago"
+    assignees:
+      - "ShadowTheWuff"
+    labels:
+      - "gh-actions"
+    commit-message:
+      # Prefix all commit messages with "npm: "
+      prefix: "actions"
+    pull-request-branch-name:
+      # Change the default separator (/) to a hyphen (-)
+      separator: "-"

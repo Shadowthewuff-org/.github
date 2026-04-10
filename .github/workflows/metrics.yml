@@ -14,7 +14,22 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lowlighter/metrics@latest
+     # - uses: lowlighter/metrics@latest
+      - uses: lowlighter/metrics@master
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: Shadowthewuff-org
+          plugin_languages: yes
+          plugin_languages_sections: recently-used
+          plugin_languages_recent_load: 400
+          plugin_languages_recent_days: 14
+          output_action: commit
+          committer_branch: metrics-renders
+          committer_message: "chore: update metrics"
+          plugin_music_token: ${{ secrets.LASTFM_TOKEN }}
+          plugin_music: yes
+          plugin_music_provider: lastfm
+          plugin_music_user: ShadowTheWuff
+          #plugin_projects: yes
+          #plugin_projects_repositories: lowlighter/metrics/projects/1
+          #plugin_projects_descriptions: yes
